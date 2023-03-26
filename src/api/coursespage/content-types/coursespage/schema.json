@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "coursespages",
+  "info": {
+    "singularName": "coursespage",
+    "pluralName": "coursespages",
+    "displayName": "Coursespage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Our Course",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "pageInfo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.page-info"
+    },
+    "excludedCourses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course"
+    }
+  }
+}

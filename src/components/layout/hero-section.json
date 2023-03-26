@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_layout_hero_sections",
+  "info": {
+    "displayName": "heroSection"
+  },
+  "options": {},
+  "attributes": {
+    "callToAction": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "buttons": {
+      "displayName": "link",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.link"
+    }
+  }
+}

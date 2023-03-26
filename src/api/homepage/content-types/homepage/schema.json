@@ -1,0 +1,58 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Home",
+      "required": false,
+      "unique": true
+    },
+    "hero": {
+      "displayName": "heroSection",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.hero-section"
+    },
+    "servicesPreview": {
+      "displayName": "servicesPreview",
+      "type": "component",
+      "repeatable": true,
+      "component": "layout.services-preview"
+    },
+    "featuredCourse": {
+      "displayName": "featuredCourse",
+      "type": "component",
+      "repeatable": false,
+      "component": "layout.featured-course"
+    },
+    "postsSelection": {
+      "displayName": "postsSelection",
+      "type": "component",
+      "repeatable": false,
+      "component": "blog.posts-selection"
+    },
+    "DynamicHomeSection": {
+      "type": "dynamiczone",
+      "components": [
+        "layout.newsletter-form",
+        "layout.mission"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "repeatable": false,
+      "component": "seo.seo-information"
+    }
+  }
+}
