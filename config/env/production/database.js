@@ -12,6 +12,7 @@ const {host, port, database, user, password } = parse(env("DATABASE_URL"));
         database,
         user,
         password,
+        ssl: true,
       },
       debug: false,
     },
