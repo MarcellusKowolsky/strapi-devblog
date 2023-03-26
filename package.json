@@ -9,8 +9,8 @@
     "build": "strapi build",
     "strapi": "strapi"
   },
-  "devDependencies": {},
   "dependencies": {
+    "@octokit/request": "^6.2.3",
     "@strapi/plugin-graphql": "4.6.2",
     "@strapi/plugin-i18n": "4.6.2",
     "@strapi/plugin-users-permissions": "4.6.2",
