@@ -27,7 +27,16 @@ module.exports = ({ strapi }) => ({
     return Promise.all(result.data.map(async (item) => {
       const { id, name, description, html_url, owner, default_branch } = item;
       const readmeUrl = `https://raw.githubusercontent.com/${owner.login}/${name}/${default_branch}/README.md`;
-      console.log(readmeUrl);
+
+      try {
+        const response = await axios.get(readmeUrl);
+        // console.log("Response", response);
+        if (response) readmeResponse = response.data;
+      } catch (e) {
+        // console.log(`Error occurred on item ${name}`);
+        // console.log("Error", e);
+      }
+
       const longDescription = md.render((await axios.get(readmeUrl)).data).replaceAll("\n", "<br/>");
       const repo = {
         id,
@@ -36,6 +45,8 @@ module.exports = ({ strapi }) => ({
         url: html_url,
         longDescription,
       };
+
+      
 
 
       const relatedProjectId = strapi.plugin("github-projects").service("getReposService").getProjectForRepo(repo);
